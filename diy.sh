@@ -11,8 +11,6 @@ svn_export() {
 	rm -rf "$TMP_DIR"
 }
 
-cp -f ./patch/mt7621_xiaomi_mi-router-3g.dts /target/linux/ramips/dts/mt7621_xiaomi_mi-router-3g.dts
-cp -f ./patch/02_network /target/linux/ramips/mt7621/base-files/etc/board.d/02_network
 # 删除冲突软件和依赖
 rm -rf feeds/packages/lang/golang 
 rm -rf feeds/luci/applications/luci-app-pushbot feeds/luci/applications/luci-app-serverchan
@@ -32,17 +30,17 @@ svn_export "main" "luci-app-passwall" "package/luci-app-passwall" "https://githu
 #make && sudo make install
 #popd
 # 微信推送
-sed -i "s|qidian|bilibili|g" feeds/luci/applications/luci-app-serverchan/root/usr/share/serverchan/serverchan
+# sed -i "s|qidian|bilibili|g" feeds/luci/applications/luci-app-serverchan/root/usr/share/serverchan/serverchan
 # 替换argon主题
 rm -rf feeds/luci/themes/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git ./feeds/luci/themes/luci-theme-argon
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 # 微信推送
-sed -i "s|qidian|bilibili|g" feeds/luci/applications/luci-app-wechatpush/root/usr/share/wechatpush/wechatpush
+# sed -i "s|qidian|bilibili|g" feeds/luci/applications/luci-app-wechatpush/root/usr/share/wechatpush/wechatpush
 # 个性化设置
 cd package
-sed -i "s/OpenWrt /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" lean/default-settings/files/zzz-default-settings
-sed -i 's/OpenWrt/MI-R3G/' package/base-files/files/bin/config_generate
+sed -i "s/OpenWrt /P3N9 build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" lean/default-settings/files/zzz-default-settings
+sed -i 's/OpenWrt/AX-1800T/' package/base-files/files/bin/config_generate
 sed -i "/firewall\.user/d" lean/default-settings/files/zzz-default-settings
 sed -i 's/192.168.1.1/192.168.10.1/g' base-files/files/bin/config_generate
 # 更新passwall规则
