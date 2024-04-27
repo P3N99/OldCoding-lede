@@ -22,7 +22,6 @@ git clone https://github.com/gngpp/luci-theme-design package/luci-theme-design
 git clone https://github.com/sbwml/luci-app-alist package/luci-app-alist
 git clone https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall-packages
 git clone --depth 1 https://github.com/chenmozhijin/luci-app-adguardhome package/luci-app-adguardhome
-git clone -b openwrt-18.06 --depth 1 https://github.com/tty228/luci-app-wechatpush feeds/luci/applications/luci-app-serverchan
 svn_export "main" "luci-app-passwall" "package/luci-app-passwall" "https://github.com/xiaorouji/openwrt-passwall"
 
 # 编译 po2lmo (如果有po2lmo可跳过)
