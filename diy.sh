@@ -16,12 +16,12 @@ rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 # 下载插件
 git clone https://github.com/gngpp/luci-theme-design package/luci-theme-design
+git clone https://github.com/fw876/helloworld
 # git clone https://github.com/sbwml/luci-app-alist package/luci-app-alist
 # git clone https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall-packages
-# git clone --depth 1 https://github.com/chenmozhijin/luci-app-adguardhome package/luci-app-adguardhome
+git clone https://github.com/chenmozhijin/luci-app-adguardhome
 # svn_export "main" "luci-app-passwall" "package/luci-app-passwall" "https://github.com/xiaorouji/openwrt-passwall"
-# Add feed sources
-echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
+
 
 # 替换argon主题
 rm -rf feeds/luci/themes/luci-theme-argon
