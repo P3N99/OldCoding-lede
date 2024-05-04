@@ -27,7 +27,7 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
-  DIY_SH: diy.sh
+  DIY_SH: scripts/e8820s.sh
   TZ: Asia/Shanghai
 
 jobs:
