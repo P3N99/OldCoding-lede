@@ -16,10 +16,12 @@ rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 # 下载插件
 git clone https://github.com/gngpp/luci-theme-design package/luci-theme-design
-git clone https://github.com/sbwml/luci-app-alist package/luci-app-alist
+# git clone https://github.com/sbwml/luci-app-alist package/luci-app-alist
 # git clone https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall-packages
-git clone --depth 1 https://github.com/chenmozhijin/luci-app-adguardhome package/luci-app-adguardhome
-svn_export "main" "luci-app-passwall" "package/luci-app-passwall" "https://github.com/xiaorouji/openwrt-passwall"
+# git clone --depth 1 https://github.com/chenmozhijin/luci-app-adguardhome package/luci-app-adguardhome
+# svn_export "main" "luci-app-passwall" "package/luci-app-passwall" "https://github.com/xiaorouji/openwrt-passwall"
+# Add feed sources
+echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 
 # 替换argon主题
 rm -rf feeds/luci/themes/luci-theme-argon
@@ -29,7 +31,7 @@ find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 # 个性化设置
 cd package
 sed -i "s/OpenWrt /P3N9 build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" lean/default-settings/files/zzz-default-settings
-sed -i 's/OpenWrt/AX-1800T/' package/base-files/files/bin/config_generate
+# sed -i 's/OpenWrt/E8820S/' package/base-files/files/bin/config_generate
 sed -i "/firewall\.user/d" lean/default-settings/files/zzz-default-settings
 sed -i 's/192.168.1.1/192.168.10.1/g' base-files/files/bin/config_generate
 
