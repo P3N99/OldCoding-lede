@@ -1,7 +1,6 @@
-# sim-ax1800t-Lede-build
-自动编译
+# Oldcoding-Lede-build
+云编译 Lede固件 开源Wifi
 
-默认IP：192.168.1.1
+默认IP：192.168.3.1
 默认密码：password
 
-Lede固件，超频1G，开源wifi
