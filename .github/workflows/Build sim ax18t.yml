@@ -227,8 +227,8 @@ jobs:
         # CONFIG_PACKAGE_luci-app-filetransfer=y
         # CONFIG_PACKAGE_luci-app-nlbwmon=y
         # CONFIG_PACKAGE_luci-app-firewall=y
-        CONFIG_PACKAGE_luci-app-ssr-plus=y
-        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
+        # CONFIG_PACKAGE_luci-app-ssr-plus=y
+        # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
         # CONFIG_PACKAGE_luci-app-serverchan is not set
         CONFIG_PACKAGE_luci-app-pptp-server=y
         # CONFIG_PACKAGE_luci-app-samba4 is not set
@@ -243,7 +243,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-vsftpd=y
         # CONFIG_PACKAGE_luci-app-vlmcsd is not set
         # CONFIG_PACKAGE_luci-app-zerotier is not set
-        CONFIG_PACKAGE_luci-app-adguardhome=y
+        # CONFIG_PACKAGE_luci-app-adguardhome=y
         CONFIG_PACKAGE_luci-app-sqm=y
         EOF
 
