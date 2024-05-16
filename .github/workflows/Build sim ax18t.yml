@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Sim AX18T OpenWrt
+name: sim ax18t
 
 on:
   repository_dispatch:
@@ -27,7 +27,7 @@ env:
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
-  DIY_SH: diy.sh
+  DIY_SH: scripts/sim_ax18t.sh
   TZ: Asia/Shanghai
 
 jobs:
@@ -173,7 +173,6 @@ jobs:
         CONFIG_DEFAULT_luci-app-ssr-plus=y
         CONFIG_DEFAULT_luci-app-turboacc=y
         CONFIG_DEFAULT_luci-app-upnp=y
-        CONFIG_DEFAULT_luci-app-vlmcsd=y
         CONFIG_DEFAULT_luci-app-vsftpd=y
         CONFIG_DEFAULT_luci-app-wol=y
         CONFIG_DEFAULT_luci-newapi=y
@@ -226,8 +225,8 @@ jobs:
         # CONFIG_PACKAGE_luci-app-filetransfer=y
         # CONFIG_PACKAGE_luci-app-nlbwmon=y
         # CONFIG_PACKAGE_luci-app-firewall=y
-        # CONFIG_PACKAGE_luci-app-ssr-plus=y
-        # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
+        CONFIG_PACKAGE_luci-app-ssr-plus=y
+        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
         # CONFIG_PACKAGE_luci-app-serverchan is not set
         CONFIG_PACKAGE_luci-app-pptp-server=y
         # CONFIG_PACKAGE_luci-app-samba4 is not set
@@ -236,10 +235,10 @@ jobs:
         CONFIG_PACKAGE_luci-app-webadmin=y
         # CONFIG_PACKAGE_luci-app-wol=y
         CONFIG_PACKAGE_luci-app-wrtbwmon=y
-        # CONFIG_PACKAGE_luci-app-ramfree=y
+        CONFIG_PACKAGE_luci-app-ramfree=y
         # CONFIG_PACKAGE_luci-app-usb-printer=y
         # CONFIG_PACKAGE_luci-app-upnp=y
-        # CONFIG_PACKAGE_luci-app-vsftpd=y
+        CONFIG_PACKAGE_luci-app-vsftpd=y
         # CONFIG_PACKAGE_luci-app-vlmcsd is not set
         # CONFIG_PACKAGE_luci-app-zerotier is not set
         CONFIG_PACKAGE_luci-app-adguardhome=y
@@ -334,8 +333,9 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE }}/*
         body: |
-          - 默认IP：192.168.10.1
+          - 默认IP：192.168.3.1
           - 默认密码：password
+          - 开源wifi
          
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
