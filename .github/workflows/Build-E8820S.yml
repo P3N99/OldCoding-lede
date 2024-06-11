@@ -68,13 +68,16 @@ jobs:
         ccache: 'true'
         prefix: ${{ github.workspace }}/openwrt
 
+      - name: Update feeds
+      run: cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
+
     - name: File Diy Patch
       run: |
         chmod +x $DIY_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_SH
 
-    - name: Update feeds
+    - name: Update feeds again
       run: cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
 
     - name: Generate configuration file
