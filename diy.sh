@@ -30,10 +30,10 @@ find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 
 # 个性化设置
 cd package
-sed -i "s/OpenWrt /P3N9 build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" lean/default-settings/files/zzz-default-settings
+sed -i "s/OpenWrt /P3N9 build $(TZ=UTC-8 date "+%Y.%m.%d") @ Lean /g" lean/default-settings/files/zzz-default-settings
 sed -i 's/OpenWrt/E8820S/' package/base-files/files/bin/config_generate
 sed -i "/firewall\.user/d" lean/default-settings/files/zzz-default-settings
-sed -i 's/192.168.1.1/192.168.10.1/g' base-files/files/bin/config_generate
+sed -i 's/192.168.3.1/192.168.10.1/g' base-files/files/bin/config_generate
 
 #AdguardHome
 cd ./package/luci-app-adguardhome/root/usr
