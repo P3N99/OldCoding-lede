@@ -133,6 +133,7 @@ jobs:
         CONFIG_DEFAULT_kmod-mtk-hnat=y
         CONFIG_DEFAULT_luci-app-ssr-plus=y
         CONFIG_DEFAULT_luci-app-turboacc=y
+        EOF
         
 
         # IPv6支持:
