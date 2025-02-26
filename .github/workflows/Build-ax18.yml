@@ -125,6 +125,11 @@ jobs:
         CONFIG_TARGET_qualcommax_ipq60xx=y
         CONFIG_TARGET_qualcommax_ipq60xx_DEVICE_cmiot_ax18=y
         CONFIG_DEFAULT_ath11k-firmware-ipq6018=y
+        CONFIG_PACKAGE_kmod-nss-drv=y       
+        CONFIG_PACKAGE_kmod-qca-nss-dp=y
+        CONFIG_PACKAGE_kmod-ath11k=n        # 官方驱动稳定性问题 ‌:ml-citation{ref="3" data="citationList"}
+        CONFIG_PACKAGE_hostapd-common=n
+        CONFIG_PACKAGE_wpa-cli=n
         EOF
 
         # IPv6支持:
@@ -158,6 +163,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_BBR_CCA=y
         CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_PDNSD=y
         CONFIG_PACKAGE_luci-app-upnp=y
+        CONFIG_PACKAGE_luci-app-cpufreq=y   
         EOF
 
         # LuCI主题:
