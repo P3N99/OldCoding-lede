@@ -128,6 +128,7 @@ jobs:
         CONFIG_TARGET_mediatek=y
         CONFIG_TARGET_mediatek_filogic=y
         CONFIG_TARGET_mediatek_filogic_DEVICE_konka_komi-a31=y
+        CONFIG_LINUX_5_15=y
         EOF
 
         # IPv6支持:
